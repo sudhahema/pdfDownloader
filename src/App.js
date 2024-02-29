@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+// import PdfConvert from './Component/PdfConvert';
+import PdfDownloader from './Component/PdfDownloader';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      {/* <PDFDownloadLink  document={<PdfDownloader />}  fileName="PaySlip.pdf">
+        {({ loading }) => (
+          loading ? <button class='class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Loading Document...</button> : <button className='btn'>Download</button>
+        )}
+      </PDFDownloadLink> */}
+      <PDFViewer height={1000} width={1000}>
+        <PdfDownloader />
+      </PDFViewer>
+    </div> 
   );
 }
 
